@@ -21,9 +21,9 @@ class Solution:
             del d[curr_course] # deleting course from dictionary
             for key in d:
                 if curr_course in d[key]:
-                    d[key].remove(curr_course)
+                    d[key].remove(curr_course) # since we remove here we avoid duplicate values when appending to can_take
                     if len(d[key]) == 0:
-                        can_take.append(key)
+                        can_take.append(key) # since we removed above we avoid duplicate values which we can also solve by using a set()
 
             done.add(curr_course) # only can add unique val
 
