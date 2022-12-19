@@ -21,9 +21,9 @@ class Solution:
             del d[curr_course] # deleting course from dictionary
             for key in d:
                 if curr_course in d[key]:
-                    d[key].remove(curr_course) # since we remove here we avoid duplicate values when appending to can_take
+                    d[key].remove(curr_course) # since we remove here we avoid adding couse 0 and 1 for test case #3 when appending to can_take
                     if len(d[key]) == 0:
-                        can_take.append(key) # since we removed above we avoid duplicate values which we can also solve by using a set()
+                        can_take.append(key) # since we removed above we avoid adding couse 0 and 1 for test case #3, duplicate values and which we can also solve by using a set()
 
             done.add(curr_course) # only can add unique val
 
@@ -33,7 +33,7 @@ def main():
     test = Solution()
     print(test.canFinish(2, [[1,0]]))
     print(test.canFinish(2, [[1,0],[0,1]]))
-    print(test.canFinish(2, []))
+    print(test.canFinish(2, [])) # Case #3
     print(test.canFinish(2, [[0,1]]))
 
 main()
